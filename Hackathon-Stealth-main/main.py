@@ -1,6 +1,6 @@
 import sys
 import pygame
-from world import World
+from world.world import World
 from settings import MAZE_WIDTH, MAZE_LENGTH, FPS
 from AI_Agents import StandardAI
 
@@ -16,6 +16,7 @@ class main():
 
     running = True
     while running:
+        world.handle_events()
         for event in pygame.event.get():
             running = False
 
