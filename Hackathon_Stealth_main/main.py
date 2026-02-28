@@ -14,10 +14,10 @@ from AI_Agents import StandardAI
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((MAZE_WIDTH, MAZE_HEIGHT))
+    screen = pygame.display.set_mode((MAZE_WIDTH, MAZE_LENGTH))
     clock = pygame.time.Clock()
 
-    world = World(MAZE_WIDTH, MAZE_HEIGHT)
+    world = World(MAZE_WIDTH, MAZE_LENGTH)
 
     font = pygame.font.SysFont(None, 24)
 
