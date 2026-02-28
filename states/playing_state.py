@@ -9,16 +9,16 @@ from entities.player import Player
 class PlayingState(BaseState):
     def __init__(self):
 
-        self.grid = [1,1,1,1,1,1,1,1,
-          1,1,1,1,1,1,0,1,
-          1,0,0,0,0,0,0,1,
-          1,0,1,1,1,1,1,1,
-          1,0,1,1,1,1,1,1,
-          1,0,1,1,1,1,1,1,
-          1,0,1,1,1,1,1,1,
-          1,1,1,1,1,1,1,1]
+        self.grid = [[1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1],
+          [1,0,0,0,0,0,0,1],
+          [1,0,1,1,1,1,1,1],
+          [1,0,1,1,1,1,1,1],
+          [1,0,1,1,1,1,1,1],
+          [1,0,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1]]
 
-        self.tile_size = 40
+        self.tile_size = 80
 
         # World + entities
         self.maze = Maze(self.grid, self.tile_size)

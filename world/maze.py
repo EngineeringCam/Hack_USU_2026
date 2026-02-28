@@ -20,8 +20,8 @@ class Maze:
 
         # Optional: color lookup dictionary
         self.tile_colors = {
-            WALL: (0, 0, 255),
-            FLOOR: (30, 30, 30),
+            WALL: (0, 0, 0),
+            FLOOR: (150, 150, 150),
             GOAL: (0, 200, 0)
         }
 
