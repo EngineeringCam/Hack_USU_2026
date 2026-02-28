@@ -1,11 +1,15 @@
 import math
 import random
+import pygame
 from ..Vision_Cones.Cones_Initialization import draw_vision_cone
 
 class StandardAI:
-    def __init__(self, x, y):
+    def __init__(self, x, y, size=6):
         self.x = float(x)
         self.y = float(y)
+
+        # size: use a small square hitbox (like Player uses a size)
+        self.size = size
 
         # facing as a normalized vector (dx, dy). Must be non-zero
         self.facing = (1.0, 0.0)
@@ -22,6 +26,27 @@ class StandardAI:
         self.patrol_endB = None # tuple (x, y)
         self.patrol_target = None # current target point (x, y)
         self.cos_half_vision = math.cos(self.vision_angle / 2)
+
+    def get_rect(self):
+        """Return a pygame.Rect representing the agent's hitbox (top-left coords)"""
+        # Keep same top-left semantics as Player (x,y is top-left)
+        return pygame.Rect(int(self.x), int(self.y), int(self.size), int(self.size))
+    
+    def _collides_with_wall(self, maze):
+        """Check collision with maze using Maze.is_wall_at_pixel for corners."""
+        # check the four corners of the agent rect (simple and fast)
+        rect = self.get_rect()
+        # corners: left/top, right/top, left/bottom, right/bottom
+        corners = [
+            (rect.left, rect.top),
+            (rect.rigjht - 1, rect.top),
+            (rect.left, rect.bottom - 1),
+            (rect.right - 1, rect.bottom - 1)
+        ]
+        for (px, py) in corners:
+            if maze.is_wall_at_pixel(px, py):
+                return True
+        return False
 
     @classmethod
     def on_track(cls, endA, endB, random_t=None):
