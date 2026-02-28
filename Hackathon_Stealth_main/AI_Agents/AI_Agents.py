@@ -1,6 +1,6 @@
 import math
 import random
-from ..Vision_Cones import draw_vision_cones
+from ..Vision_Cones.Cones_Initialization import draw_vision_cone
 
 class StandardAI:
     def __init__(self, x, y):
@@ -80,7 +80,6 @@ class StandardAI:
             return False
         tx, ty = self.patrol_target
         return math.hypot(tx - self.x, ty - self.y) <= thresh
-
 
 
 class StandardAI(StandardAI):

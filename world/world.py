@@ -1,5 +1,6 @@
 import pygame
 
+from ..Hackathon_Stealth_main.Vision_Cones.Cones_Initialization import draw_vision_cone
 from states.playing_state import PlayingState
 
 
@@ -55,3 +56,7 @@ class World:
             self.current_state.draw(self, self.screen)
 
         pygame.display.flip()
+
+    def drawAgents(self, screen):
+        pygame.draw.circle(screen, (20, 150, 20), (int(plant.x), int(plant.y)), 3)
+        draw_vision_cone
