@@ -16,5 +16,12 @@ class StandardAI:
         self.standard_speed = 1
         self.running_speed = 3
 
-def movement(self):
-    self.facing
+
+def movement(self, endA, endB):
+    self.facing = []
+
+
+class StandardAI(StandardAI):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+        self.cos_half_vision = math.cos(self.vision_angle / 2)
