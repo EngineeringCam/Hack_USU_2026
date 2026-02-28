@@ -47,7 +47,7 @@ class PlayingState(BaseState):
         self.player = Player(start_x, start_y, size=10, speed=180)
 
         # Agent action controller (draw_cones True for debug)
-        self.actions = Agent_Actions(show_cones=False)
+        self.actions = Agent_Actions(show_cones=True)
 
         # Optional font for debug text/UI
         self.font: Optional[pygame.font.Font] = None
