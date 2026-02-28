@@ -45,7 +45,7 @@ class Agent_Actions:
             vy = 0.0
 
             # chase
-            if in_vision_cone(a, player):
+            if in_vision_cone(a, player, maze):
                 a.chasing = True
                 dx = player.x - a.x
                 dy = player.y - a.y

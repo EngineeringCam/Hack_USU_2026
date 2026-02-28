@@ -116,7 +116,7 @@ class PlayingState(BaseState):
 
         # Draw agents (if the world has them)
         if hasattr(game, "agents") and len(game.agents) > 0:
-            self.actions.draw_agents(screen, game.agents, draw_cones=False)
+            self.actions.draw_agents(screen, game.agents)
 
         # Optional debug overlay text
         # (uncomment if you want simple on-screen instructions)

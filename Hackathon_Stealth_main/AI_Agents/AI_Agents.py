@@ -21,8 +21,8 @@ class StandardAI:
         self.vision_angle = math.pi / 2  # 90 degrees
 
         # speeds in pixels per second (tweak to taste)
-        self.standard_speed = 60.0
-        self.running_speed = 180.0
+        self.standard_speed = 30.0
+        self.running_speed = 90.0
 
         # runtime state
         self.chasing = False
