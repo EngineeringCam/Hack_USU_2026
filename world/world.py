@@ -1,7 +1,10 @@
 import pygame
+import random
 
+from settings import AGENT_COUNT, MAZE_WIDTH, MAZE_LENGTH
 from ..Hackathon_Stealth_main.Vision_Cones.Cones_Initialization import draw_vision_cone
 from states.playing_state import PlayingState
+from ..Hackathon_Stealth_main.AI_Agents.AI_Agents import StandardAI
 
 
 class World:
@@ -20,6 +23,12 @@ class World:
 
         # FSM: start in Playing for now
         self.current_state = PlayingState()
+
+        self.agents = []
+
+    def populate(self):
+        for _ in range(AGENT_COUNT):
+            self.agents.append(StandardAI(random.randrange(MAZE_WIDTH), random.randrange(MAZE_LENGTH)))
 
     def change_state(self, new_state) -> None:
         """Switch to a new state object (e.g., MenuState(), PauseState())."""
@@ -58,5 +67,6 @@ class World:
         pygame.display.flip()
 
     def drawAgents(self, screen):
-        pygame.draw.circle(screen, (20, 150, 20), (int(plant.x), int(plant.y)), 3)
-        draw_vision_cone
+        for agent in self.agents:
+            pygame.draw.circle(screen, (20, 150, 20), (int(agent.x), int(agent.y)), 3)
+            draw_vision_cone

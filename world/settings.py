@@ -2,5 +2,6 @@ import pygame
 
 FPS = 60
 MAZE_WIDTH = 512
-MAZE_HEIGHT = 512
+MAZE_LENGTH = 512
 MAZE_FOG = False
+AGENT_COUNT = 5
