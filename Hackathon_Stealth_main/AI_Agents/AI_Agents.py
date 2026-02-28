@@ -37,19 +37,27 @@ class StandardAI:
 
     def _collides_with_wall(self, maze):
         """
-        Check collision with maze tiles by testing the 4 corners of the rect.
-        Expects Maze.is_wall_at_pixel(x,y).
+        Check collision against maze walls using tile lookup (same method Player uses).
+        This doesn't require Maze.is_wall_at_pixel to exist.
         """
         rect = self.get_rect()
-        corners = [
-            (rect.left, rect.top),
-            (rect.right - 1, rect.top),
-            (rect.left, rect.bottom - 1),
-            (rect.right - 1, rect.bottom - 1),
-        ]
-        for (px, py) in corners:
-            if maze.is_wall_at_pixel(px, py):
-                return True
+
+        # Determine which tiles the agent overlaps
+        left_tile = rect.left // maze.tile_size
+        right_tile = (rect.right - 1) // maze.tile_size
+        top_tile = rect.top // maze.tile_size
+        bottom_tile = (rect.bottom - 1) // maze.tile_size
+
+        for row in range(int(top_tile), int(bottom_tile) + 1):
+            for col in range(int(left_tile), int(right_tile) + 1):
+                # Bounds check: outside map counts as wall
+                if row < 0 or row >= maze.rows or col < 0 or col >= maze.cols:
+                    return True
+
+                # If tile value 1 is wall (your convention), collide
+                if maze.grid[row][col] == 1:
+                    return True
+
         return False
 
     @classmethod
