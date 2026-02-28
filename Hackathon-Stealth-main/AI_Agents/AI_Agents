@@ -1,0 +1,20 @@
+import math
+
+class StandardAI:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.type = type
+
+        # facing direction
+        self.facing = x, y
+
+        # vision parameters
+        self.vision_distance = 120
+        self.vision_angle = math.pi /2 # 90 degrees
+
+        self.standard_speed = 1
+        self.running_speed = 3
+
+def movement(self):
+    self.facing
