@@ -47,7 +47,7 @@ class PlayingState(BaseState):
         self.player = Player(start_x, start_y, size=10, speed=180)
 
         # Agent action controller (draw_cones True for debug)
-        self.actions = Agent_Actions(show_cones=False)
+        self.actions = Agent_Actions(show_cones=True)
 
         # Optional font for debug text/UI
         self.font: Optional[pygame.font.Font] = None
@@ -116,7 +116,7 @@ class PlayingState(BaseState):
 
         # Draw agents (if the world has them)
         if hasattr(game, "agents") and len(game.agents) > 0:
-            self.actions.draw_agents(screen, game.agents, draw_cones=False)
+            self.actions.draw_agents(screen, game.agents)
 
         # Optional debug overlay text
         # (uncomment if you want simple on-screen instructions)
