@@ -9,7 +9,7 @@ if PROJECT_ROOT not in sys.path:
 
 from world.world import World
 from world.settings import MAZE_WIDTH, MAZE_LENGTH, FPS
-from AI_Agents import StandardAI
+from Hackathon_Stealth_main.AI_Agents.AI_Agents import StandardAI
 
 
 def main():
@@ -18,6 +18,7 @@ def main():
     clock = pygame.time.Clock()
 
     world = World(MAZE_WIDTH, MAZE_LENGTH)
+    world.populate()
 
     font = pygame.font.SysFont(None, 24)
 

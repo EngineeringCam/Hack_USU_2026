@@ -1,10 +1,10 @@
 import pygame
 import random
 
-from settings import AGENT_COUNT, MAZE_WIDTH, MAZE_LENGTH
-from ..Hackathon_Stealth_main.Vision_Cones.Cones_Initialization import draw_vision_cone
+from .settings import AGENT_COUNT, MAZE_WIDTH, MAZE_LENGTH
+from Hackathon_Stealth_main.Vision_Cones.Cones_Initialization import draw_vision_cone
 from states.playing_state import PlayingState
-from ..Hackathon_Stealth_main.AI_Agents.AI_Agents import StandardAI
+from Hackathon_Stealth_main.AI_Agents.AI_Agents import StandardAI
 
 
 class World:
