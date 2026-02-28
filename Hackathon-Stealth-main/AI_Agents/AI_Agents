@@ -1,5 +1,6 @@
 import math
 import random
+from ..Vision_Cones import draw_vision_cones
 
 class StandardAI:
     def __init__(self, x, y):

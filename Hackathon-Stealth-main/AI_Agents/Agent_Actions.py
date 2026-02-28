@@ -1,6 +1,7 @@
 import math
 from AI_Agents import StandardAI
 from ..utils.utils import in_vision_cone, distance
+from ..Vision_Cones import draw_vision_cones
 
 class Agent_Actions:
     def move_agents(self, agents, player, dt=1.0):

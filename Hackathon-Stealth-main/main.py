@@ -1,7 +1,7 @@
 import sys
 import pygame
 from world.world import World
-from settings import MAZE_WIDTH, MAZE_LENGTH, FPS
+from world.settings import MAZE_WIDTH, MAZE_LENGTH, FPS
 from AI_Agents import StandardAI
 
 class main():
