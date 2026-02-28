@@ -10,7 +10,7 @@ class PlayingState(BaseState):
     def __init__(self):
 
         self.grid = [[1,1,1,1,1,1,1,1],
-          [1,1,1,1,1,1,1,1],
+          [1,0,1,1,1,1,1,1],
           [1,0,0,0,0,0,0,1],
           [1,0,1,1,1,1,1,1],
           [1,0,1,1,1,1,1,1],
@@ -26,7 +26,7 @@ class PlayingState(BaseState):
         # Start position in pixels (example: tile (1,1))
         start_x = 1 * self.tile_size
         start_y = 1 * self.tile_size
-        self.player = Player(start_x, start_y, size=28, speed=180)
+        self.player = Player(start_x, start_y, size=14, speed=180)
 
         # Optional: a font for debug text/UI
         self.font = None

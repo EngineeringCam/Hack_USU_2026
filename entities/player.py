@@ -1,7 +1,7 @@
 import pygame
 
 class Player:
-    def __init__(self, x, y, size=28, speed=180):
+    def __init__(self, x, y, size=14, speed=180):
         # Position stored as floats for smooth movement
         self.x = float(x)
         self.y = float(y)
@@ -22,7 +22,7 @@ class Player:
         dx/dy = direction input (-1, 0, or 1)
         """
 
-        # Normalize diagonal movement (prevents faster diagonal speed)
+        # Normalize diagonal movement
         if dx != 0 and dy != 0:
             dx *= 0.7071
             dy *= 0.7071
