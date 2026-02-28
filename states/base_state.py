@@ -8,14 +8,14 @@ class BaseState:
 
     def handle_events(self, game, event):
         """
-        Handle discrete input (keyboard, mouse, etc.).
+        Handle input.
         Called once per event per frame.
         """
         pass
 
     def update(self, game, dt):
         """
-        Update game logic.
+        Update logic.
         dt = delta time in seconds.
         Called once per frame.
         """

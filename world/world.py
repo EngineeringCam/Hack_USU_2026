@@ -3,9 +3,9 @@ import pygame
 from states.playing_state import PlayingState
 
 
-class Game:
+class World:
     """
-    Owns the pygame window + clock and delegates behavior to the active State.
+    Owns the pygame window, clock, and delegates behavior to the active State.
     """
 
     def __init__(self, width: int, height: int, caption: str = "Maze Game", fps: int = 60):
