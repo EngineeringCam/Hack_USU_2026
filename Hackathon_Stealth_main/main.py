@@ -8,7 +8,7 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from world.world import World
-from world.settings import MAZE_WIDTH, MAZE_HEIGHT, FPS
+from world.settings import MAZE_WIDTH, MAZE_LENGTH, FPS
 from AI_Agents import StandardAI
 
 
