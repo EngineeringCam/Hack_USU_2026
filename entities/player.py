@@ -59,7 +59,7 @@ class Player:
                 if row < 0 or row >= maze.rows or col < 0 or col >= maze.cols:
                     return True  # treat outside map as wall
 
-                # Check tile type (1 = wall assumed)
+                # Check tile type, if 1, it's a wall
                 if maze.grid[row][col] == 1:
                     return True
 
